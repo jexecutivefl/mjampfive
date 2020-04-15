@@ -1,0 +1,225 @@
+
+<!-- Default form register -->
+<div class="row p-3">
+  <div class="col-8">
+    <form class="text-center border border-light p-5" [formGroup] = "form" (submit)="onSavePatient()">
+      <div class="form-row mb-4">
+        <div class="col">
+          <h3>Patient Info</h3>
+          <div class="form-row mb-2">
+            <div class="col">
+              <!-- Name -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientFirstName"
+                placeholder="Patient First Name">
+            </div>
+            <div class="col">
+              <!-- Name -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientLastName"
+                placeholder="Patient Last Name">
+            </div>
+          </div>
+          <div class="form-row mb-2">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientDob"
+                placeholder="Patient DOB"
+              >
+            </div>
+            <div class="col">
+              <!-- group npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientPreferredContact"
+                placeholder="Preferred Contact">
+            </div>
+          </div>
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- E-mail -->
+              <input
+                type="email"
+                class="form-control"
+                formControlName="patientEmail"
+                placeholder="Patient E-mail">
+            </div>
+            <div class="col">
+              <!-- Phone number -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientPhone"
+                placeholder="Patient Phone"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock">
+            </div>
+          </div>
+          <div class="form-row mb-1">
+            <div class="col">
+              <!-- group npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientAddress1"
+                placeholder="Address">
+            </div>
+            <div class="col">
+              <!-- provider npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientAddress2"
+                placeholder="Address 2">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <!-- group npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientCity"
+                placeholder="City">
+            </div>
+            <div class="col">
+              <!-- provider npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientState"
+                placeholder="State">
+            </div>
+            <div class="col">
+              <!-- provider npi -->
+              <input
+                type="text"
+                class="form-control"
+                formControlName="patientZip"
+                placeholder="Zip">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Save button -->
+      <button mdbBtn color="info" block="true" class="my-4" type="submit">Save</button>
+    </form>
+  </div>
+  <div class="col-4">
+    <div class="container">
+      <h3>Visits</h3>
+      <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+        <h5>+ Visit</h5>
+        <thead>
+        <tr>
+          <th *ngFor="let head of headElements2; let i = index" scope="col">{{head}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+              scope="row">{{el.id}}</th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+        </tr>
+        </tbody>
+        <tfoot class="grey lighten-5 w-100">
+        <tr>
+          <td colspan="4">
+            <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+      <h5>Docs</h5>
+      <h4>+ Docs</h4>
+      <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+        <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+              scope="row">{{el.id}}</th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+        </tr>
+        </tbody>
+        <tfoot class="grey lighten-5 w-100">
+        <tr>
+          <td colspan="4">
+            <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+      <h5>Images</h5>
+      <h4>+ Images</h4>
+      <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+        <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+              scope="row">{{el.id}}</th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+        </tr>
+        </tbody>
+        <tfoot class="grey lighten-5 w-100">
+        <tr>
+          <td colspan="4">
+            <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+      <h3>Transactions</h3>
+      <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+        <h5>+ Transation</h5>
+        <thead>
+        <tr>
+          <th *ngFor="let head of headElements2; let i = index" scope="col">{{head}}
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let el of elements; let i = index">
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+              scope="row">{{el.id}}</th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+        </tr>
+        </tbody>
+        <tfoot class="grey lighten-5 w-100">
+        <tr>
+          <td colspan="4">
+            <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- Default form register -->

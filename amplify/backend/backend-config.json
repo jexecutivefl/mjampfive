@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"mjampfive456f52f1": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

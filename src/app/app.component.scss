@@ -1,0 +1,11 @@
+div {
+  margin-bottom: 50px;
+}
+main.margin-left {
+  margin-left: 7rem !important;
+}
+@media only screen and (min-width: 960px) {
+  main.margin-left {
+    padding-left: 0px!important;
+  }
+}

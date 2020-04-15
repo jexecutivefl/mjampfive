@@ -1,0 +1,178 @@
+
+<!-- Default form register -->
+<div class="form-row mb-4">
+  <div class="col-s-8">
+    <form class="text-center border border-light p-1" [formGroup] = "form">
+      <h3>Visit Info</h3>
+      <div class="form-row mb-2">
+        <div class="col">
+
+          <!-- Visit Type -->
+          Visit Type
+          <select
+            class="browser-default custom-select"
+            formControlName="visitType"
+          >
+            <option selected value="newApplication">New Application</option>
+            <option value="210">210 Visit</option>
+            <option value="renewal">Renewal</option>
+          </select>
+        </div>
+        <div class="col">
+          <!-- Scheduled Date Time -->
+          Scheduled Date
+          <input
+            type="datetime-local"
+            class="form-control"
+            formControlName="scheduledDate"
+            placeholder="Scheduled Date Time">
+        </div>
+      </div>
+      <div class="form-row mb-2" style="text-align: left;">
+        <div class="col">
+          <!-- Scheduled Date and Time -->
+          Time In
+          <input
+            type="datetime-local"
+            class="form-control"
+            formControlName="timeIn"
+            placeholder="Time In">
+        </div>
+        <div class="col">
+          <!-- Scheduled Date and Time -->
+          Time Out
+          <input
+            type="datetime-local"
+            class="form-control"
+            formControlName="timeOut"
+            placeholder="Time Out">
+        </div>
+      </div>
+      <h3>Payment Info</h3>
+      <div class="form-row">
+        <div class="col" style="text-align: left;">
+          <!-- AMOUNT PAID -->
+          <!--              todo: set amount owed it ts-->
+          Owed
+          <input
+            type="number"
+            class="form-control"
+            formControlName="amountOwed"
+            placeholder="Amount Owed">
+        </div>
+        <div class="col" style="text-align: left;">
+          <!-- AMOUNT OWED -->
+          Paid
+          <input
+            type="number"
+            class="form-control"
+            formControlName="amountPaid"
+            placeholder="Amount Paid">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          Invoice: square.com
+        </div>
+      </div>
+      <!-- Send To Square -->
+      <div class="row mt-5">
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+          <mdb-checkbox [default]="true" [checked]="true" formControlName="pushToCalendar">Create Invoice</mdb-checkbox>
+        </div>
+      </div>
+
+      <!-- Send to Calendar -->
+      <div class="row">
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+          <mdb-checkbox [default]="true" [checked]="true" formControlName="sendToSquare">Send To Calendar</mdb-checkbox>
+        </div>
+      </div>
+      <!-- Save button -->
+      <button mdbBtn color="info" block="true" class="my-4" >Save</button>
+    </form>
+  </div>
+  <div class="col-4">
+    <h3>Docs</h3>
+    <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+      <h5>+ Docs</h5>
+      <thead>
+      <tr>
+        <th *ngFor="let head of headElements2; let i = index" scope="col">{{head}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let el of elements; let i = index">
+        <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+            scope="row">{{el.id}}</th>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+      </tr>
+      </tbody>
+      <tfoot class="grey lighten-5 w-100">
+      <tr>
+        <td colspan="4">
+          <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+    <h3>Images</h3>
+    <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+      <h5>+ Images</h5>
+      <thead>
+      <tr>
+        <th *ngFor="let head of headElements2; let i = index" scope="col">{{head}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let el of elements; let i = index">
+        <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+            scope="row">{{el.id}}</th>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+      </tr>
+      </tbody>
+      <tfoot class="grey lighten-5 w-100">
+      <tr>
+        <td colspan="4">
+          <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+    <h3>Transactions</h3>
+    <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+      <h5>+ Transation</h5>
+      <thead>
+      <tr>
+        <th *ngFor="let head of headElements2; let i = index" scope="col">{{head}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let el of elements; let i = index">
+        <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+            scope="row">{{el.id}}</th>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.first}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
+        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+      </tr>
+      </tbody>
+      <tfoot class="grey lighten-5 w-100">
+      <tr>
+        <td colspan="4">
+          <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+
+<!-- Default form register -->

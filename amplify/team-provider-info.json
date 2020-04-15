@@ -1,0 +1,20 @@
+{
+    "mjampfive": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-mjampfive-mjampfive-104415-authRole",
+            "UnauthRoleArn": "arn:aws:iam::908072118105:role/amplify-mjampfive-mjampfive-104415-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::908072118105:role/amplify-mjampfive-mjampfive-104415-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-mjampfive-mjampfive-104415-deployment",
+            "UnauthRoleName": "amplify-mjampfive-mjampfive-104415-unauthRole",
+            "StackName": "amplify-mjampfive-mjampfive-104415",
+            "StackId": "arn:aws:cloudformation:us-east-1:908072118105:stack/amplify-mjampfive-mjampfive-104415/6da87f80-79a7-11ea-ae6f-0a254e00bc9f",
+            "AmplifyAppId": "d1m99c2iuonq2i"
+        },
+        "categories": {
+            "auth": {
+                "mjampfive456f52f1": {}
+            }
+        }
+    }
+}

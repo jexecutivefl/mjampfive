@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mjampfive';
+
+  specialPage: boolean;
+
+  private specialPages: any[] = [
+    '/pages/login',
+    '/pages/register',
+    '/pages/lock',
+    '/pages/pricing',
+    '/pages/single-post',
+    '/pages/post-listing'
+  ];
+  title = 'mjampfour';
 }

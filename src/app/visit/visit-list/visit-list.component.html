@@ -1,0 +1,58 @@
+<div class="row pb-2">
+  <div class="col-4">
+    <app-create-visit (visitCreated)="onVisitCreated($event)"></app-create-visit>
+  </div>
+  <div class="col-8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="md-form">
+            <input
+              type="text"
+              [(ngModel)]="searchText"
+              class="form-control"
+              id="search"
+              mdbInput
+            />
+            <label for="search">Search</label>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+          <thead>
+          <tr>
+            <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+            </th>
+            <td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let el of elements; let i = index">
+            <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"
+                scope="row"><a href="" [routerLink] = "['/edit-visit/' + el.id]">{{el.id}}</a></th>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.scheduledDate}}</td>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex"><a
+              href="" [routerLink]="['/edit-patient/', '12345']">{{el.patientFirstName}} {{el.patientLastName}}</a></td>
+            <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+              <mdb-icon fas icon="user-alt" class="mr-1" [routerLink]="['/edit-patient/', el.id]"></mdb-icon>
+              <mdb-icon fas icon="pencil-alt" class="mr-1"></mdb-icon>
+              <mdb-icon fas icon="trash-alt"></mdb-icon>
+            </td>
+          </tr>
+          </tbody>
+          <tfoot class="grey lighten-5 w-100">
+          <tr>
+            <td colspan="4">
+              <mdb-table-pagination [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

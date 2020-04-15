@@ -1,0 +1,45 @@
+<mdb-navbar [containerInside]="false" SideClass="navbar navbar-expand-lg navbar-light white">
+
+  <!-- Navbar brand -->
+  <logo class="ml-3">
+    <a class="navbar-brand" href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/" style="padding-left:100px!important;">
+      <strong class="blue-text">MMJ EHR</strong>
+    </a>
+  </logo>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto ml-5">
+      <li class="nav-item">
+        <button mdbBtn size="sm" color="primary" routerLink="/create-patient" target="_blank" mdbWavesEffect><i class="fas fa-plus"></i>Patient</button>
+      </li>
+      <li class="nav-item">
+        <button mdbBtn size="sm" color="primary" routerLink="/create-visit" target="_blank" mdbWavesEffect><i class="fas fa-plus"></i>Visit</button>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <ul class="navbar-nav nav-flex-icons">
+
+      <li class="nav-item">
+        <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank" mdbWavesEffect>
+          <mdb-icon fab icon="facebook-f"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank" mdbWavesEffect>
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i></a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>

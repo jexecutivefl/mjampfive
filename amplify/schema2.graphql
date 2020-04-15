@@ -1,0 +1,22 @@
+type Visit @model @key(name: "queryName", fields: [
+  "queryName", "scheduledDateTime"
+], queryField: "visitByDateAndTime"){
+  id: ID!
+  scheduledDateTime: String!
+  queryName: String!
+}
+type Patient @model {
+
+}
+type Document @model {
+
+}
+type Transaction @model {
+
+}
+type Doctor @model {
+
+}
+type Image @model {
+
+}
